@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #eef2ef;
+  --color-ink: #14272b;
+  --color-pine: #2f6f5e;
+  --color-pine-dark: #235346;
+  --color-pine-light: #d5e6df;
+  --color-amber: #f2b94b;
+  --color-amber-dark: #c98f1f;
+  --color-brick: #b5453a;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-pine;
+  }
+}
+
+/* Reusable classes built from Tailwind utilities */
+@layer components {
+  .field {
+    @apply w-full rounded-lg border border-ink/20 bg-white px-3 py-2 text-sm
+      focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium;
+  }
+  .panel {
+    @apply rounded-xl bg-white p-5 shadow-sm ring-1 ring-ink/10;
+  }
+}

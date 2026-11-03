@@ -1,0 +1,34 @@
+/* These rules apply only to the navbar component's own template. */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #14272b;
+}
+
+.link {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  color: #c9d6d2;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.link.active {
+  color: #ffffff;
+}
+
+.link.active::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -2px;
+  height: 3px;
+  border-radius: 2px;
+  background: #f2b94b;
+}
